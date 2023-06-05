@@ -1,11 +1,10 @@
-
 import {
   View, Text, StyleSheet, Image, ImageBackground, ViewProps, props, ActivityIndicator,
   TouchableHighlight, Modal
 } from 'react-native';
-import { Button, ButtonGroup, } from '@rneui/themed';
+import { Button, ButtonGroup } from '@rneui/themed';
 import LinearGradient from 'react-native-linear-gradient';
-import { Card } from 'react-native-paper';
+import { Card, Checkbox } from 'react-native-paper';
 import { SliderBox } from "react-native-image-slider-box";
 import Slideshow from 'react-native-image-slider-show';
 import AwesomeButton from 'react-native-really-awesome-button';
@@ -14,7 +13,11 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function HomeScreen({ navigation }) {
+export default function Homemodal2({ navigation }) {
+  const [checked, setChecked] = React.useState(false);
+
+
+
 
   const CustomTitle = () => {
     return (
@@ -171,7 +174,146 @@ export default function HomeScreen({ navigation }) {
       </View>
 
 
-     
+      <Modal
+        transparent={true}
+        visible={true}>
+        <View style={{ backgroundColor: "#000000aa", flex: 1 }}>
+          <View style={{
+            backgroundColor: "#FFFF",
+            margin: 50,
+            height: 340,
+            alignSelf: "center",
+            marginTop: 210,
+            width: 350,
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
+            borderBottomLeftRadius: 15,
+            borderBottomRightRadius: 15,
+          }}>
+            <Button
+              title={<CustomTitle1 />}
+              raised
+              ViewComponent={LinearGradient} // Don't forget this!
+              linearGradientProps={{
+                colors: ['#FF6966', '#FF6850'],
+
+              }}
+              onPress={() => navigation.navigate('Choicepage')}
+              titleStyle={{
+                color: 'black',
+                fontSize: 14,
+                fontFamily: 'NotoSansThai-SemiBold',
+                marginHorizontal: 10,
+
+              }} containerStyle={{
+                width: 155,
+                marginHorizontal: 10,
+                marginVertical: 10,
+
+                borderRadius: 20,
+                marginTop: 45,
+                height: 140,
+                left: 85
+
+              }}
+              buttonStyle={{
+                borderWidth: 0,
+                borderColor: 'transparent',
+                borderRadius: 12,
+                height: 140,
+                flexDirection: 'column',
+
+
+              }}
+
+            ></Button>
+            <Text style={{
+              color: "#000000",
+              fontSize: 13,
+              fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
+              marginTop: 10,
+              left: 60
+            }}>หากท่านต้องการทราบกระบวนการดำเนินคดี</Text>
+            <Text style={{
+              color: "#000000",
+              fontSize: 13,
+              fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
+              marginTop: 0,
+              left: 70
+            }}>บนชั้นศาลอย่างละเอียดท่านควรจะปรึกษา</Text>
+            <Text style={{
+              color: "#000000",
+              fontSize: 13,
+              fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
+              marginTop: 0,
+              left: 80
+            }}>กฎหมายกับทนายความผู้มีใบอนุญาต</Text>
+            <View style={{ flexDirection: 'row',left:105,marginTop:5 }}>
+              <Checkbox
+                status={checked ? 'checked' : 'unchecked'}
+                color='#FF6969'
+                uncheckedColor="#FF6969"
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+              /><Text
+              style={{
+                marginTop:7,
+                fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
+              }}>ไม่แสดงสิ่งนี้อีก</Text></View>
+            <View style={{ flexDirection: 'row' }}>
+              <Image source={require('../img/Ellipse4.png')}
+                style={{
+                  marginTop: 20,
+                  left: 155
+                }}></Image>
+              <Image source={require('../img/Ellipse3.png')}
+                style={{
+                  marginTop: 20,
+                  left: 165
+                }}></Image>
+            </View>
+
+
+
+
+
+
+
+
+
+
+          </View>
+          <Button color="#FBD653"
+            title="เริ่ม"
+            onPress={() => navigation.navigate('Services1')}
+            titleStyle={{
+
+              color: '#FFFF',
+              fontSize: 14,
+
+              fontFamily: 'NotoSansThai-SemiBold',
+
+            }} containerStyle={{
+              width: 110,
+              marginHorizontal: 50,
+              marginVertical: 10,
+              marginLeft: 145,
+              borderRadius: 20,
+              marginTop: -30
+            }}
+            buttonStyle={{
+              borderWidth: 0,
+              borderColor: 'transparent',
+              borderRadius: 12,
+            }}
+
+            raised>
+
+          </Button>
+
+        </View>
+      </Modal>
 
       <View style={styles.container2}>
 

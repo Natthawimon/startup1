@@ -3,6 +3,7 @@ import React from 'react'
 import { Button, ButtonGroup, } from '@rneui/themed';
 
 const Choicepage = () => {
+   
     return (
         <View style={styles.container}>
             

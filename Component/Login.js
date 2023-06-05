@@ -34,6 +34,7 @@ function Login ({ navigation })  {
             if (data.token) {
               // Login successful, log the token
               console.log('Token:', data.token);
+              console.log('firstname:', data.sola);
               Alert.alert('Login Successful', 'You have been logged in successfully.');
               navigation.navigate('Services1')
             } else {
