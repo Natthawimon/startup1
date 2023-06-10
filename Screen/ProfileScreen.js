@@ -83,6 +83,7 @@ export default function ProfileScreen({ navigation }) {
 
 
         <Button
+        onPress={() => navigation.navigate('Profile2')}
           buttonStyle={{
             backgroundColor: "#FFFF",
             width: 120,

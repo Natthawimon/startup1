@@ -13,7 +13,7 @@ import HomeScreen from '../Screen/HomeScreen';
 import ChatScreen from '../Screen/ChatScreen';
 import AdmireScreen from '../Screen/AdmireScreen';
 import ProfileScreen from '../Screen/ProfileScreen';
-import Paypage from './Paypage';
+
 
 
 //Screen names
@@ -40,7 +40,8 @@ function Services1() {
           tabBarShowLabel: false ,
           tabBarStyle: { position: 'absolute', padding: 10, height: 50,  },
           tabBarBackground:() =>(
-            <LinearGradient  colors={[ '#FF6966','#FF1F1F']} style={{height:70,borderTopLeftRadius:15,borderTopRightRadius:15}}/>
+            <LinearGradient  colors={[ '#FF6966','#FF1F1F']} 
+            style={{height:70,borderTopLeftRadius:15,borderTopRightRadius:15}}/>
           ),
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;

@@ -13,9 +13,21 @@ import React, { useEffect, useState } from "react";
 
 
 
+export default function HomeScreen({ navigation,data }) {
+  this.state = {
+    username : []
+  }
+  const {username} = this.state;
+  fetch('http://141.98.17.89/login', {
+          method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+          },
+          
+         }).then(response => response.json())
+         .then(username => this.setState({username, firstname}));
 
-export default function HomeScreen({ navigation }) {
-
+         
   const CustomTitle = () => {
     return (
       <View style={{ flexDirection: 'column' }}>
@@ -60,7 +72,7 @@ export default function HomeScreen({ navigation }) {
         textShadowColor: 'rgba(0, 0, 0, 0.55)',
         textShadowOffset: { width: -1, height: 1 },
         textShadowRadius: 10
-      }}>สวีสดี ผู้ใช้งาน </Text>
+      }}>สวีสดี  {username.firstname}</Text>
       <Text style={{
         color: "#000000",
         marginHorizontal: 5,
