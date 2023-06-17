@@ -24,6 +24,13 @@ import Qrcom from './Component/Qrcom';
 import DescribeConsult from './Component/DescribeConsult';
 import ShowConsult from './Component/ShowConsult';
 import Profile2 from './Screen/Profile2';
+import FlnameSetting from './Screen/FlnameSetting';
+import NumberPhoneSetting from './Screen/NumberPhoneSetting';
+import PasswordSetting from './Screen/PasswordSetting';
+import EmailSetting from './Screen/EmailSetting';
+import LinkSetting from './Screen/LinkSetting';
+import About from './Screen/About';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -43,10 +50,7 @@ const App = () => {
 
 
          
- <Stack.Screen
-          name="Services1"
-          component={Services1}
-          />
+ 
           <Stack.Screen
           name="Profile2"
           component={Profile2}

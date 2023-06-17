@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, Image, ImageBackground, StyleSheet } from 'react-native';
-import { Button, ButtonGroup, } from '@rneui/themed';
+import { Button, ButtonGroup, Icon } from '@rneui/themed';
 import LinearGradient from 'react-native-linear-gradient';
 import { BackgroundImage } from '@rneui/base';
 import HomeScreen from '../Screen/HomeScreen';
@@ -11,14 +11,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
+
 export default function Profile2({ navigation }) {
     const homeName = "Home";
-const chatName = "chat";
-const admireName = "admire";
-const profileName = "profile";
+    const chatName = "chat";
+    const admireName = "admire";
+    const profileName = "profile";
     return (
-       
-        <View style={{ flex: 1,backgroundColor:"#FFFF" }}>
+
+        <View style={{ flex: 1, backgroundColor: "#FFFF" }}>
             <ImageBackground source={require('../img/lll111.png')}
                 style={{
                     width: 422,
@@ -28,21 +29,25 @@ const profileName = "profile";
 
 
                 {/* รูปและชื่อจากหลังบ้าน */}
+                <Button 
+                color={"#FBD653"}
+                containerStyle={{
+                    alignSelf: "center",
+                    width:200,
+                    height:400,
+                    marginTop:60
+                }}
+                buttonStyle={{
+                    height:150,
+                    borderRadius: 120,
+                }}>
 
-                <Text></Text>
-                <Text></Text>
 
 
+                </Button>
 
-                <View style={styles.imageContainer}>
-                    <Image source={require('../img/Add.png')}
-                        style={{
-                            left: 335,
-                            marginTop: 0,
-                        }}>
-                    </Image>
 
-                </View>
+                
             </ImageBackground>
 
             <Text
@@ -50,7 +55,7 @@ const profileName = "profile";
                     fontSize: 18,
                     fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
                     textAlign: "center",
-                    marginTop:25
+                    marginTop: 25
 
                 }}>โปรไฟล์ของคุณ</Text>
 
@@ -64,28 +69,29 @@ const profileName = "profile";
                     style={{
                         fontSize: 14,
                         fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                        color: '#000000',
-                        left: 25,
-                        padding: 6
+                        color: '#959595',
+                        
+                        
                     }}>ชื่อ
                 </Text>
 
                 <Button
+                 title="Basic Button"
+                onPress={() => navigation.navigate('FlnameSetting')}
                     buttonStyle={{
                         backgroundColor: "#FFFF",
                         width: 200,
                         height: 40
                     }}
-                    containerStyle={{ backgroundColor: "#FFFF" }}>
-                    <Image source={require('../img/iconlockopen.png')}>
-                    </Image>
-                    <Text
-                        style={{
-                            color: '#000000',
-                            fontSize: 17.5,
-                            fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                            left: 15
-                        }}>ความเป็นส่วนตัว</Text>
+                    containerStyle={{ backgroundColor: "#FFFF" }}
+                    titleStyle={{
+    color:"black"
+                    }}
+                       >
+                 
+                    <Icon
+                        name='chevron-right'
+                        color={"#C5C5C5"}></Icon>
                 </Button>
 
 
@@ -93,108 +99,140 @@ const profileName = "profile";
                     style={{
                         fontSize: 14,
                         fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                        color: '#000000',
-                        left: 25,
-                        padding: 6
-                    }}>การทำรายการ
+                        color: '#959595',
+                        
+                    }}>หมายเลขโทรศัพท์
                 </Text>
                 <Button
+                onPress={() => navigation.navigate('NumberPhoneSetting')}
                     buttonStyle={{
                         backgroundColor: "#FFFF",
                         width: 165,
                         height: 40
                     }}
                     containerStyle={{ backgroundColor: "#FFFF" }}>
-                    <Image source={require('../img/iconcredit.png')}>
 
-                    </Image>
                     <Text
                         style={{
                             color: '#000000',
-                            fontSize: 17.5,
-                            fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                            left: 15
-                        }}>การเติมเงิน</Text>
+                            fontSize: 16,
+                            fontFamily: 'NotoSansThai-SemiBold',
+                            
+                        }}>xxx-xxx-xxxx</Text>
+                    <Icon
+                        name='chevron-right'
+                        color={"#C5C5C5"}></Icon>
                 </Button>
-               
+
                 <Text
                     style={{
                         fontSize: 14,
                         fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                        left: 15,
-                        color: '#000000',
-                        left: 25,
-                        padding: 6
-                    }}>เกี่ยวกับแอป
+                        
+                        color: '#959595',
+                       
+                    }}>อีเมล
                 </Text>
                 <Button
+                onPress={() => navigation.navigate('EmailSetting')}
                     buttonStyle={{
                         backgroundColor: "#FFFF",
                         width: 190,
                         height: 40
                     }}
                     containerStyle={{ backgroundColor: "#FFFF" }}>
-                    <Image source={require('../img/iconwarningcircle.png')}>
 
-                    </Image>
                     <Text
                         style={{
                             color: '#000000',
-                            fontSize: 17.5,
-                            fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                            left: 15
-                        }}>รายงานปัญหา</Text>
-               </Button>
-               <Text
+                            fontSize: 16,
+                            fontFamily: 'NotoSansThai-SemiBold',
+                            
+                        }}>lalawtalk@gmail.com</Text>
+                    <Icon
+                        name='chevron-right'
+                        color={"#C5C5C5"}></Icon>
+                </Button>
+                <Text
                     style={{
                         fontSize: 14,
                         fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                        left: 15,
-                        color: '#000000',
-                        left: 25,
-                        padding: 6
-                    }}>เกี่ยวกับแอป
+                        
+                        color: '#959595',
+                       
+                    }}>รหัสผ่าน
                 </Text>
                 <Button
+                onPress={() => navigation.navigate('PasswordSetting')}
                     buttonStyle={{
                         backgroundColor: "#FFFF",
                         width: 190,
                         height: 40
                     }}
                     containerStyle={{ backgroundColor: "#FFFF" }}>
-                    <Image source={require('../img/iconwarningcircle.png')}>
 
-                    </Image>
                     <Text
                         style={{
                             color: '#000000',
-                            fontSize: 17.5,
-                            fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
-                            left: 15
-                        }}>รายงานปัญหา</Text>
-               </Button>
+                            fontSize: 16,
+                            fontFamily: 'NotoSansThai-SemiBold',
+
+                        }}>รหัสผ่านของคุณ</Text>
+                    <Icon
+                        name='chevron-right'
+                        color={"#C5C5C5"}></Icon>
+                </Button>
+                <Text
+                    style={{
+                        fontSize: 14,
+                        fontFamily: 'NotoSansThai-VariableFont_wdth,wght',
+                        
+                        color: '#959595',
+                       
+                    }}>การเชื่อมต่อ
+                </Text>
+                <Button
+                onPress={() => navigation.navigate('LinkSetting')}
+                    buttonStyle={{
+                        backgroundColor: "#FFFF",
+                        width: 190,
+                        height: 40
+                    }}
+                    containerStyle={{ backgroundColor: "#FFFF" }}>
+
+                    <Text
+                        style={{
+                            color: '#000000',
+                            fontSize: 16,
+                            fontFamily: 'NotoSansThai-SemiBold',
+
+                        }}>Facebook</Text>
+                    <Icon
+                        name='chevron-right'
+                        color={"#C5C5C5"}></Icon>
+                </Button>
             </View>
 
-        
-        
-    
-    
-    
-       
+
+
+
+
+
+
         </View>
     );
 }
 const styles = StyleSheet.create({
     container2: {
-        width: 390,
+        width: 350,
         alignSelf: "center",
-        marginTop: 0,
-        marginBottom:20,
-        marginTop:10,
-        backgroundColor:"#FFFF"
+
+        padding: 12,
+        backgroundColor: "#FFFF",
+        margin:10
     },
     imageContainer: {
         marginTop: -120,
-        backgroundColor:"#FFFF"
+        backgroundColor: "#FFFF"
     }
 })

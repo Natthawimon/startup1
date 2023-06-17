@@ -88,7 +88,7 @@ function Login ({ navigation })  {
             onPress={(value) => {
               setSelectedIndex(value);
             }}
-            value="อีเมล"
+            value=""
             containerStyle={{
               color: "#FBD653",
               borderRadius: 15,
